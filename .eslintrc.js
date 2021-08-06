@@ -1,25 +1,26 @@
 module.exports = {
     globals: {
         Vue: true,
-        _: true,
+        _: true
     },
     env: {
         browser: true,
-        es2021: true,
+        es2021: true
     },
     extends: [
         'plugin:vue/essential',
-        'airbnb-base',
+        'airbnb-base'
     ],
     parserOptions: {
         // parser: 'babel-eslint',
         ecmaVersion: 12,
-        sourceType: 'module',
+        sourceType: 'module'
     },
     plugins: [
-        'vue',
+        'vue'
     ],
     rules: {
         indent: ['error', 4],
-    },
+        'comma-dangle': ['error', 'never']
+    }
 };
