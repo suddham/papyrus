@@ -9,8 +9,8 @@ class Duolingo {
 	 * @param {String} opts.password
 	 */
     constructor(opts) {
-        this.userName = opts.userName;
-        this.password = opts.password;
+        this.userName = config.defaultUser;
+        this.password = config.defaultPassword;
         this.jwt = null;
         this.userData = null;
         /** Should be node or browser* */

@@ -1,6 +1,6 @@
 import Duolingo from './duo-api-client';
 
-const duo = new Duolingo({ userName: 'SuddhaM', password: 'bqz1KPQ7hyc1eyk.gkw' });
+const duo = new Duolingo({});
 
 export const initDuoLogIn = () => duo.logIn()
     .then((result) => {

@@ -35,7 +35,7 @@
 
 <script>
 import BackHomeButton from '@components/BackHomeButton.vue';
-import Duolingo from '@/utils/duo-api-client';
+import { initDuoLogIn } from '@/utils/api';
 
 export default {
     components: {
@@ -48,26 +48,8 @@ export default {
         };
     },
     methods: {
-        login() {
-            this.duo = new Duolingo({ userName: process.env.VUE_APP_ROOT_USER, password: process.env.VUE_APP_ROOT_PASSWORD });
-
-            this.duo.logIn()
-                .then((result) => {
-                    console.log('login success', result);
-                    this.duo.getData()
-                        .then((data) => {
-                            console.log('getData success', data);
-                            // use returned data or use userData on duo instance
-                            console.log(this.duo.userData);
-                            console.log(this.duo.getUserData());
-                            console.log(this.duo.getVocabulary());
-                        })
-                        .catch((e) => {
-                            // handle error
-                            console.error(e);
-                        });
-                })
-                .catch();
+        async login() {
+            this.duo = await initDuoLogIn();
         }
     }
 };
