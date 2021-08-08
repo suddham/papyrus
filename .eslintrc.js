@@ -12,9 +12,7 @@ module.exports = {
         'airbnb-base'
     ],
     parserOptions: {
-        // parser: 'babel-eslint',
-        ecmaVersion: 12,
-        sourceType: 'module'
+        parser: 'babel-eslint',
     },
     plugins: [
         'vue'
